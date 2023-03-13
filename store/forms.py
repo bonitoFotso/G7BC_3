@@ -1,7 +1,9 @@
 from django import forms
-from .models import ReviewRating
+from .models import *
 
-class ReviewForms(forms.ModelForm):
+class ItemForm(forms.ModelForm):
+    
     class Meta:
-        model = ReviewRating
-        fields = ['subject','review','rating']
+        model = Item
+        fields = ('title', 'price', 'discount_price', 'category', 'slug', 'description', 'image', )
+        
